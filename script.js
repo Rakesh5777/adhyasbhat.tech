@@ -3,7 +3,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 document.body.classList.add('no-scroll');
 
-if (true) {
+if (window.innerWidth <= 500) {
     document.querySelector('.video').remove();
     gsapAnimations(1500);
 } else {
