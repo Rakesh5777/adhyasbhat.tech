@@ -13,6 +13,10 @@ if (window.innerWidth <= 500) {
     };
 }
 
+document.querySelector('.clickMe').addEventListener('click', () => {
+    window.open('https://www.linkedin.com/in/adhyasbhat/', '_blank');
+})
+
 
 function gsapAnimations(loaderTime = 1000) {
 
