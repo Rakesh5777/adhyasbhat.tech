@@ -1,14 +1,22 @@
 gsap.registerPlugin(ScrollTrigger);
 
-let vid = document.getElementById("video");
 
 document.body.classList.add('no-scroll');
 
+if (true) {
+    document.querySelector('.video').remove();
+    gsapAnimations(1500);
+} else {
+    let vid = document.getElementById("video");
+    vid.onloadeddata = () => {
+        gsapAnimations();
+    };
+}
 
-vid.onloadeddata = () => {
-    
+
+function gsapAnimations(loaderTime = 1000) {
     setTimeout(() => {
-        
+
         document.body.classList.remove('no-scroll');
 
         const loaderAndImage = gsap.timeline();
@@ -172,5 +180,5 @@ vid.onloadeddata = () => {
         })
 
 
-    },1000)
-};
+    }, loaderTime)
+}
