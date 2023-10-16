@@ -5,16 +5,50 @@ document.body.classList.add('no-scroll');
 
 if (window.innerWidth <= 500) {
     document.querySelector('.video').remove();
-    gsapAnimations(1500);
+    gsapAnimations(6500);
 } else {
     let vid = document.getElementById("video");
     vid.onloadeddata = () => {
-        gsapAnimations();
+        gsapAnimations(5000);
     };
 }
 
 
 function gsapAnimations(loaderTime = 1000) {
+
+    setTimeout(() => {
+        const helloTitleTimeline = gsap.timeline();
+
+        helloTitleTimeline
+            .to('.happy', {
+                duration: 0.3,
+                ease: "none", y: 0
+            })
+            .to('.birthday', {
+                duration: 0.3,
+                ease: "none", y: 0
+            })
+            .to('.adhya', {
+                duration: 0.3,
+                ease: "none", y: 0
+            })
+            .to('.from', {
+                duration: 0.3,
+                ease: "none", y: 0
+            })
+            .to('.own', {
+                duration: 0.3,
+                ease: "none", y: 0
+            })
+            .to('.domain', {
+                duration: 0.3,
+                ease: "none", y: 0
+            })
+
+    }, 1000)
+
+
+
     setTimeout(() => {
 
         document.body.classList.remove('no-scroll');
@@ -38,7 +72,7 @@ function gsapAnimations(loaderTime = 1000) {
 
         loaderAndImage
             .to('.loader', {
-                opacity: 0, duration: 0.5,
+                opacity: 0, duration: 1,
                 ease: "power3.out",
                 y: -1500
             })
